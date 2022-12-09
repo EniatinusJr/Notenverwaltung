@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      your mom
+      your mouse
     </div>
   );
 }
