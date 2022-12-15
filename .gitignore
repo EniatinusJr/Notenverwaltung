@@ -28,6 +28,7 @@ compile_commands.json
 /npm/path.txt
 /npm/checksums.json
 
+# build directory
 /build
 
 .npmrc
