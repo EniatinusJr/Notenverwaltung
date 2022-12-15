@@ -1,5 +1,4 @@
 import './App.css';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -54,7 +53,7 @@ function Navigation() {
                 : <></>
             }
         </Box>
-        <Box sx={{ width: 500 }}>
+        <Box sx={{ width: 500}}>
             <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
                 <BottomNavigation
                     showLabels
