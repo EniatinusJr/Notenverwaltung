@@ -5,23 +5,33 @@ import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "./firebase";
 import Mainpage from './Mainpage';
 import Create from './Create';
 import User from './User';
+import Login from './Login';
+import { useEffect } from 'react';
+
 
 function Navigation() {
 
     const [value, setValue] = useState(0);
+    const [user, error] = useAuthState(auth);
+
 
     const  changeTab = (event, newValue) =>  {
         setValue(newValue)
         console.log(newValue)
     }
+
+
+    useEffect(() => {
+        if (!user) setValue(3);
+    },[user]);
 
 
     return (
@@ -37,6 +47,10 @@ function Navigation() {
             }
             {value == 2
                 ? <User></User>
+                : <></>
+            }
+            {value == 3
+                ? <Login></Login>
                 : <></>
             }
         </Box>
