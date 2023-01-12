@@ -15,6 +15,7 @@ import {
   deleteDoc,
   where,
   getDocs,
+  setDoc,
 } from "firebase/firestore";
 import { useState } from "react";
 import FormControlContext from "@mui/material/FormControl/FormControlContext";
@@ -116,4 +117,4 @@ function Edit(props) {
   );
 }
 
-export default Create;
+export default Edit;
