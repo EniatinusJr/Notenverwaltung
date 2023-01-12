@@ -26,7 +26,6 @@ function Create() {
   const [subject, setSubject] = useState("");
   const [weight, setWeight] = useState(1);
   const [title, setTitle] = useState("");
-
   const AddButton = () => {
     <IconButton>
       <AddIcon />

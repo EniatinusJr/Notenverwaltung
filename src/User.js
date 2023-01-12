@@ -8,10 +8,9 @@ function User() {
         <Paper>
             <Grid>
                 <Grid>
-                    your mom
+                    <h1>Update your user Data</h1>
                 </Grid>
                 <Grid>
-                    get shit on
                 </Grid>
             </Grid>
         </Paper>
