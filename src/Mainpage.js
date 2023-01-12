@@ -3,13 +3,14 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "./firebase";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { query,collection,where,onSnapshot } from 'firebase/firestore';
 
 
 function Mainpage() {
 
     const [user, error] = useAuthState(auth);
+    const [grades, setGrades] = useState([])
 
 
     useEffect(() => {
@@ -23,16 +24,22 @@ function Mainpage() {
             querySnapshot.forEach((doc) => {
               let object = doc.data();
               object.id = doc.id;
+              grades.push(object)
               console.log(object)
             });
           });
-    }
+          setGrades(grades)
+        
+        }
 
     return (
         <Paper>
             <Grid>
                 <Grid>
-                    Sorry max
+                    <h1>Notenverwaltung</h1>
+                </Grid>
+                <Grid>
+                  {grades.map( (grade,k) => <p>{grade?.Title} {grade?.Grade}</p> )}
                 </Grid>
             </Grid>
         </Paper>

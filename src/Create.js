@@ -8,10 +8,9 @@ function Create() {
         <Paper>
             <Grid>
                 <Grid>
-                    your mom
+                    <h1>Create an Absence</h1>
                 </Grid>
                 <Grid>
-                    get shit on
                 </Grid>
             </Grid>
         </Paper>
