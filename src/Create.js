@@ -50,22 +50,28 @@ function Create() {
 
   return (
     <Box>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={12}>
-          <TextField 
-            fullWidth
+      <Grid 
+        container spacing={3} 
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        >
+        <Grid item xs={6} md={6}>
+          <TextField
+            sx={{width: { sm: 200, md: 300 }}} 
             id="title" 
             label="title" 
             variant="outlined" 
             onChange={ (event) => setTitle(event.target.value)}
             value={title}
             required
+            margin="normal"
           />
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={6} md={6}>
           <TextField
-            fullWidth
+            sx={{width: { sm: 200, md: 300 }}} 
             InputProps={{ inputProps: { min: 1, max: 6 } }}
             type="number"
             id="grade"
@@ -77,9 +83,9 @@ function Create() {
           />
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={6} md={6}>
           <TextField
-            fullWidth
+            sx={{width: { sm: 200, md: 300 }}} 
             id="weight"
             label="weight"
             variant="outlined"
@@ -91,9 +97,9 @@ function Create() {
           />
         </Grid>
 
-        <Grid item xs={12} md={12}>
+        <Grid item xs={6} md={6}>
           <TextField
-            fullWidth
+            sx={{width: { sm: 200, md: 300 }}} 
             id="subject"
             label="subject"
             variant="outlined"
@@ -104,8 +110,8 @@ function Create() {
           />
         </Grid>
 
-        <Grid item xs={12} md={12}>
-          <Button fullWidth variant="contained" size="large" onClick={addGrade} type='submit'>
+        <Grid item xs={6} md={6}>
+          <Button sx={{width: { sm: 200, md: 300 }}} variant="contained" size="large" onClick={addGrade} type='submit'>
             submit
           </Button>
         </Grid>
