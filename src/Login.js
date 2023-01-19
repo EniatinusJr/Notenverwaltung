@@ -11,6 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useState } from 'react';
 import { logInWithEmailAndPassword } from './firebase';
 import Register from './Register';
+import { Box } from '@mui/system';
 
 
 function Login() {
@@ -30,22 +31,54 @@ function Login() {
 
     return (
         <Paper>
-            <Grid>
+            <Grid
+              container spacing={3} 
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              >
+                <Box mt={2}>
+                  <Grid>
+                      <h3>Login</h3>
+                  </Grid>
+                </Box>
                 <Grid>
-                    <h3>Login</h3>
+                <TextField 
+                  id="outlined-basic" 
+                  label="Email" 
+                  variant="outlined" 
+                  onChange={(e) => setEmail(e.target.value)} 
+                  margin="normal"
+                  />
                 </Grid>
                 <Grid>
-                <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
+                <TextField 
+                  id="outlined-basic" 
+                  label="Password" 
+                  type="password" 
+                  variant="outlined" 
+                  onChange={(e) => setPassword(e.target.value)} 
+                  margin="normal"
+                  />
                 </Grid>
-                <Grid>
-                <TextField id="outlined-basic" label="Password" type="password" variant="outlined" onChange={(e) => setPassword(e.target.value)} />
-                </Grid>
-                <Grid>
-                    <Button variant="contained" onClick={(e) => {logInWithEmailAndPassword(email,password)}}>Login</Button>
-                </Grid>
-                <Grid>
-                <Button variant="contained" onClick={(e) => {handleClickOpen()}}>Register</Button>
-                </Grid>
+                <Box mt={2}>
+                  <Grid>
+                    <Box mt={2}>
+                      <Button 
+                          variant="contained" 
+                          onClick={(e) => {logInWithEmailAndPassword(email,password)}}
+                          >Login</Button>
+                    </Box>
+                  </Grid>
+                  <Grid>
+                    <Box mt={2}>
+                      <Button 
+                        variant="contained" 
+                        onClick={(e) => {handleClickOpen()}}
+                        >Register</Button>
+                    </Box>
+                  </Grid>
+                </Box>
                 <Dialog
         open={open}
         onClose={handleClose}
