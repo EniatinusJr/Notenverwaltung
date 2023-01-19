@@ -16,7 +16,12 @@ function Register() {
 
     return (
         <Paper>
-            <Grid>
+            <Grid
+                container spacing={3} 
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                >
                 <Grid>
                     <h3>Register</h3>
                 </Grid>
